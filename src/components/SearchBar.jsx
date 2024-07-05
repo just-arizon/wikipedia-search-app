@@ -17,17 +17,19 @@ const SearchBar = ({onSearch}) => {
     }
   return (
     <form onSubmit={handleSubmit}>
-        <input 
-        type='search'
-        name='searchTerm'
-        id='searchTerm'
-        placeholder='Enter a search term...'
-        value={searchTerm}
-        ref={inputRef}
-        onChange={(event) => {
-            setSearchTerm(event.target.value)
-        }}
-        />
+        <div className="input">
+            <input
+            type='search'
+            name='searchTerm'
+            id='searchTerm'
+            placeholder='Enter a search term...'
+            value={searchTerm}
+            ref={inputRef}
+            onChange={(event) => {
+                setSearchTerm(event.target.value)
+            }}
+            />
+        </div>
       
     </form>
   );

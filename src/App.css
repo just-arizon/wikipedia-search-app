@@ -44,14 +44,17 @@ header{
 .read-the-docs {
   color: #888;
 }
-.img{
-  text-align: center;
+.img,
+.input{
+  display: flex;
+  justify-content: center;
 }
 h1{
   text-align: center;
 }
 input{
   width: 100%;
+  max-width: 800px;
   height: 3em;
   border-radius: 2px;
   outline: none;
