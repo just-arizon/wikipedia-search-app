@@ -3,6 +3,7 @@ import SearchBar from './components/SearchBar'
 import ArticleList from './components/ArticleList'
 import viteLogo from './assets/wikipedia-logotype-of-earth-puzzle-svgrepo-com.svg'
 import './App.css'
+import { search } from './api';
 
 function App() {
   const [articles, setArticles] = useState([])
@@ -14,9 +15,11 @@ function App() {
   return (
     <>
      <header>
-      <img src={viteLogo} alt="wikipedia" />
-      <h1>Wikipedia Search</h1>
-      <SearchBar onSearch={handleSearch}/>
+      <div>
+        <div className="img"><img src={viteLogo} alt="wikipedia" /></div>
+        <h1>Wikipedia Search</h1>
+        <SearchBar onSearch={handleSearch}/>
+      </div>
      </header>
      <main id="searchResult">
         <ArticleList articles={articles} />

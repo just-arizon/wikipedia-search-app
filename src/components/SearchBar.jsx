@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const SearchBar = ({onSearch}) => {
 
     const [searchTerm, setSearchTerm] = useState('');
+    const inputRef = useRef(null);
+    
+
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -16,6 +23,7 @@ const SearchBar = ({onSearch}) => {
         id='searchTerm'
         placeholder='Enter a search term...'
         value={searchTerm}
+        ref={inputRef}
         onChange={(event) => {
             setSearchTerm(event.target.value)
         }}
